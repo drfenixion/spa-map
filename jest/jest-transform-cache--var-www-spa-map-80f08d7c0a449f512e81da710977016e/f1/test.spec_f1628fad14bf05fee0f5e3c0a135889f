@@ -1,0 +1,26 @@
+/* istanbul ignore next */'use strict';var _jsxFileName = '/var/www/spa-map/test/test.spec.js';var /* istanbul ignore next */_expect = require('expect'); /* istanbul ignore next */var _expect2 = _interopRequireDefault(_expect);
+var /* istanbul ignore next */_testUtils = require('react-dom/test-utils'); /* istanbul ignore next */var _testUtils2 = _interopRequireDefault(_testUtils);
+var /* istanbul ignore next */_shallow = require('react-test-renderer/shallow'); /* istanbul ignore next */var _shallow2 = _interopRequireDefault(_shallow);
+var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var CoolComponent = function CoolComponent( /* istanbul ignore next */_ref) /* istanbul ignore next */{var greeting = _ref.greeting;return (
+    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: undefined },
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'h1', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: undefined }, /* istanbul ignore next */'Greeting'),
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: undefined }, greeting)));};
+
+
+
+describe('CoolComponent', function () {
+  it('should render the greeting', function () {
+    var renderer = /* istanbul ignore next */_shallow2.default.createRenderer();
+    renderer.render( /* istanbul ignore next */_react2.default.createElement(CoolComponent, /* istanbul ignore next */{ greeting: 'hello world', __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: undefined }));
+    var actual = renderer.getRenderOutput();
+    var expected =
+    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: undefined },
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'h1', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: undefined }, /* istanbul ignore next */'Greeting'),
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: undefined }, /* istanbul ignore next */'hello world'));
+
+
+    /* istanbul ignore next */(0, _expect2.default)(actual).toEqual(expected);
+  });
+});

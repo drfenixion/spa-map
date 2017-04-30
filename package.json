@@ -1,0 +1,31 @@
+{
+  "name": "spa-map",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "google-map-react": "^0.24.0",
+    "history": "^4.3.0",
+    "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
+    "react-dom": "^15.5.4",
+    "react-rangeslider": "^2.0.1",
+    "react-redux": "^5.0.4",
+    "react-toggle": "^3.0.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.1",
+    "superagent": "^2.3.0",
+    "superagent-promise": "^1.1.0"
+  },
+  "devDependencies": {
+    "create-react-app-stylus": "^1.1.1",
+    "expect": "^1.20.2",
+    "react-scripts": "0.9.5",
+    "react-test-renderer": "^15.5.4"
+  },
+  "scripts": {
+    "start": "react-scripts-with-stylus start src/style/main.styl",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,6 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var /* istanbul ignore next */_redux = require('redux');
+var /* istanbul ignore next */_points = require('./reducers/points'); /* istanbul ignore next */var _points2 = _interopRequireDefault(_points);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
+
+
+/* istanbul ignore next */(0, _redux.combineReducers)({
+  points: /* istanbul ignore next */_points2.default });

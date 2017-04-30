@@ -1,0 +1,51 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/spa-map/src/components/RatingSlider.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+
+var /* istanbul ignore next */_reactRangeslider = require('react-rangeslider'); /* istanbul ignore next */var _reactRangeslider2 = _interopRequireDefault(_reactRangeslider);
+/* istanbul ignore next */require('react-rangeslider/lib/index.css'); /* istanbul ignore next */function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) /* istanbul ignore next */{return {
+    onChangesFilterRating: function /* istanbul ignore next */onChangesFilterRating(payload) /* istanbul ignore next */{return (
+        dispatch({ type: 'FILTER_RATING', payload: payload }));} };};
+
+
+
+class RatingSlider extends /* istanbul ignore next */_react.Component {
+
+  constructor(props, context) {/* istanbul ignore next */var _this;
+    /* istanbul ignore next */_this = super(props, context); /* istanbul ignore next */this.
+
+
+
+
+
+
+
+
+
+
+    handleOnChange = function (value) {
+      /* istanbul ignore next */_this.setState({
+        value: value });
+
+    };this.state = { value: 1 };this.onChangeComplete = function (newFilterRating) /* istanbul ignore next */{return function () {/* istanbul ignore next */_this.props.onChangesFilterRating(newFilterRating);};};}
+
+  render() {/* istanbul ignore next */var
+    value = this.state.value;
+    return (
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ className: 'slider', __source: { fileName: _jsxFileName, lineNumber: 36 }, __self: this },
+        /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'span', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 37 }, __self: this }, /* istanbul ignore next */'\u0420\u0435\u0439\u0442\u0438\u043D\u0433'),
+        /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRangeslider2.default, /* istanbul ignore next */{
+          min: 1,
+          max: 10,
+          step: 1,
+          value: value,
+          onChange: this.handleOnChange,
+          onChangeComplete: this.onChangeComplete(value), __source: { fileName: _jsxFileName, lineNumber: 38 }, __self: this })));
+
+
+
+  }} /* istanbul ignore next */exports.default =
+
+
+/* istanbul ignore next */(0, _reactRedux.connect)(function () /* istanbul ignore next */{return {};}, mapDispatchToProps)(RatingSlider);

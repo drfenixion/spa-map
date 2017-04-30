@@ -1,0 +1,101 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.default = function () {/* istanbul ignore next */var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}; /* istanbul ignore next */var action = arguments[1];
+
+  function getFilteredPoints(originPoints, filterConfig) {
+    var pointsFiltered = originPoints.filter(
+    function (point) {
+      var flag = true;
+      flag = point.rating >= filterConfig.rating ? true : false;
+      if (flag === false) return false;
+
+      var filterConfigTypesElement = getFilterConfigTypesElement(filterConfig.types, point.typeId);
+      if (filterConfigTypesElement.length > 0) {
+        if (filterConfigTypesElement[0].flag === false) return false;
+      }
+      return true;
+    });
+
+
+    return pointsFiltered;
+  }
+
+  function getFilterConfigTypesElement(filterConfigTypes, typeId) {
+    var filteredArray = filterConfigTypes.filter(function (item) {
+      if (item.typeId === typeId) {
+        return true;
+      }
+      return false;
+    });
+
+    return filteredArray;
+  }
+
+  var filterConfig = {};
+  var pointsFiltered = [];
+  switch (action.type) {
+    case 'FILTER_RATING':
+
+      filterConfig = { types: state.filterConfig.types, rating: action.payload };
+      pointsFiltered = getFilteredPoints(state.origin, filterConfig);
+      return (/* istanbul ignore next */Object.assign({},
+        state, {
+          filtered: pointsFiltered,
+          filterConfig: filterConfig }));
+
+    case 'FILTER_TYPE':
+
+      var testTypeIsSet = getFilterConfigTypesElement(state.filterConfig.types, action.typeId);
+      //add or update element to filterConfigTypes
+      var filterConfigTypes = [];
+      if (testTypeIsSet.length === 0) {
+        filterConfigTypes = state.filterConfig.types;
+        filterConfigTypes.push({ typeId: action.typeId, flag: action.flag });
+      } else {
+        filterConfigTypes = state.filterConfig.types.map(function (item) {
+          if (item.typeId === action.typeId) {
+            return { typeId: item.typeId, flag: action.flag };
+          }
+          return item;
+        });
+      }
+
+      filterConfig = { types: filterConfigTypes, rating: state.filterConfig.rating };
+      pointsFiltered = getFilteredPoints(state.origin, filterConfig);
+
+      return (/* istanbul ignore next */Object.assign({},
+        state, {
+          filtered: pointsFiltered,
+          filterConfig: filterConfig }));
+
+
+    case 'ADD_RANDOM_POINTS':
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      var originPoints = state.origin;
+
+      for (var i = 0; i < 100; i++) {
+        originPoints.push(
+        {
+          id: originPoints.length + 1,
+          typeId: getRandomInt(1, 6),
+          rating: getRandomInt(1, 10),
+          lat: parseFloat('56.' + getRandomInt(221568, 441568)),
+          lng: parseFloat('43.' + getRandomInt(789893, 999999)) });
+
+
+      }
+
+      filterConfig = { types: state.filterConfig.types, rating: state.filterConfig.rating };
+      pointsFiltered = getFilteredPoints(originPoints, filterConfig);
+
+      return (/* istanbul ignore next */Object.assign({},
+        state, {
+          filtered: pointsFiltered,
+          filterConfig: filterConfig }));
+
+    default:
+      return (/* istanbul ignore next */Object.assign({}, state));}
+
+};

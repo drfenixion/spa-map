@@ -1,0 +1,50 @@
+/* istanbul ignore next */'use strict';var _jsxFileName = '/var/www/spa-map/test/components/GeoAppContaner.test.js';
+
+//import TestUtils from 'react-dom/test-utils';
+var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);var /* istanbul ignore next */_expect = require('expect'); /* istanbul ignore next */var _expect2 = _interopRequireDefault(_expect);var /* istanbul ignore next */_shallow = require('react-test-renderer/shallow'); /* istanbul ignore next */var _shallow2 = _interopRequireDefault(_shallow);
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+var /* istanbul ignore next */_store = require('./../../src/store'); /* istanbul ignore next */var _store2 = _interopRequireDefault(_store);
+
+var /* istanbul ignore next */_GeoMap = require('./../../src/components/GeoMap'); /* istanbul ignore next */function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+describe('CoolComponent', function () {
+  it('should render the greeting', function () {
+    var renderer = /* istanbul ignore next */_shallow2.default.createRenderer();
+    renderer.render(
+    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_GeoMap.GeoMap, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: undefined }));
+
+    var actual = renderer.getRenderOutput();
+
+    var center = { lat: 56.2903745, lng: 43.9068256 };
+    var zoom = 11;
+    var API_KEY = 'AIzaSyDh_8BhNU8Zbc-mcRmhN-pddWm8_GCFm1c';
+    //console.log('actual: ', actual);
+    var expected =
+    /* istanbul ignore next */_react2.default.createElement(GoogleMapReact, /* istanbul ignore next */{
+        defaultCenter: center,
+        defaultZoom: zoom,
+        bootstrapURLKeys: {
+          key: API_KEY,
+          language: 'ru' }, __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: undefined },
+
+
+
+      /* istanbul ignore next */_store2.default.points.filtered.map(function (point) /* istanbul ignore next */{return (
+
+          /* istanbul ignore next */_react2.default.createElement(Point, /* istanbul ignore next */{
+            key: point.id,
+            lat: point.lat,
+            lng: point.lng,
+            typeId: point.typeId,
+            rating: point.rating, __source: { fileName: _jsxFileName, lineNumber: 35 }, __self: undefined }));}));
+
+
+
+
+
+
+
+    /* istanbul ignore next */(0, _expect2.default)(actual).toEqual(expected);
+  });
+});

@@ -1,0 +1,37 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/spa-map/src/components/TypesTogglePanel.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+var /* istanbul ignore next */_reactBootstrap = require('react-bootstrap');
+
+var /* istanbul ignore next */_TypeToggle = require('./TypeToggle'); /* istanbul ignore next */var _TypeToggle2 = _interopRequireDefault(_TypeToggle);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    types: state.points.types };
+
+};
+
+class TypesTogglePanel extends /* istanbul ignore next */_react.Component {
+
+  render() {/* istanbul ignore next */var _this = this;
+    return (
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'form', /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this },
+        /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactBootstrap.FormGroup, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
+
+          this.props.types.map(function (type) /* istanbul ignore next */{return (
+
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_TypeToggle2.default, /* istanbul ignore next */{
+                key: type.id,
+                id: type.id,
+                name: type.name, __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: _this }));}))));
+
+
+
+
+
+
+
+  }} /* istanbul ignore next */exports.default =
+
+
+/* istanbul ignore next */(0, _reactRedux.connect)(mapStateToProps, {})(TypesTogglePanel);

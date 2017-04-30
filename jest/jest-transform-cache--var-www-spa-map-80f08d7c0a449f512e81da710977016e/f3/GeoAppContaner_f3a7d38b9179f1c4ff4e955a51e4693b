@@ -1,0 +1,62 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/spa-map/src/components/GeoAppContaner.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+var /* istanbul ignore next */_reactBootstrap = require('react-bootstrap');
+
+var /* istanbul ignore next */_GeoMap = require('./GeoMap'); /* istanbul ignore next */var _GeoMap2 = _interopRequireDefault(_GeoMap);
+var /* istanbul ignore next */_RatingSlider = require('./RatingSlider'); /* istanbul ignore next */var _RatingSlider2 = _interopRequireDefault(_RatingSlider);
+var /* istanbul ignore next */_TypesTogglePanel = require('./TypesTogglePanel'); /* istanbul ignore next */var _TypesTogglePanel2 = _interopRequireDefault(_TypesTogglePanel);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) /* istanbul ignore next */{return {
+    onAddRandomPoints: function /* istanbul ignore next */onAddRandomPoints(value) /* istanbul ignore next */{return (
+        dispatch({ type: 'ADD_RANDOM_POINTS', value: value }));} };};
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    addPointsCount: state.points.globalConfig.addPointsCount,
+    countFiltered: state.points.filtered.length };
+
+};
+
+
+class GeoAppContaner extends /* istanbul ignore next */_react.Component {
+
+  constructor(props, context) {/* istanbul ignore next */var _this;
+    /* istanbul ignore next */_this = super(props, context);
+
+    this.addRandomPoints = function (value) /* istanbul ignore next */{return function () {
+        /* istanbul ignore next */_this.props.onAddRandomPoints(value);
+      };};
+  }
+
+  render() {
+    return (
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ id: 'geo_app_contaner', __source: { fileName: _jsxFileName, lineNumber: 35 }, __self: this },
+        /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactBootstrap.Grid, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 36 }, __self: this },
+          /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactBootstrap.Row, /* istanbul ignore next */{ className: 'show-grid', __source: { fileName: _jsxFileName, lineNumber: 37 }, __self: this },
+            /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactBootstrap.Col, /* istanbul ignore next */{ sm: 12, md: 3, __source: { fileName: _jsxFileName, lineNumber: 38 }, __self: this },
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_TypesTogglePanel2.default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 39 }, __self: this }),
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_RatingSlider2.default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 40 }, __self: this }),
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ className: 'command_panel', __source: { fileName: _jsxFileName, lineNumber: 41 }, __self: this },
+                /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactBootstrap.Button, /* istanbul ignore next */{ className: 'command_button',
+                    onClick: this.addRandomPoints(this.props.addPointsCount), __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this }, /* istanbul ignore next */'\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C ',
+                  this.props.addPointsCount),
+
+                /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'span', /* istanbul ignore next */{ className: 'pointsRenderedCount', __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this }, /* istanbul ignore next */'\u0412\u0441\u0435\u0433\u043E:\xA0', this.props.countFiltered))),
+
+
+            /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactBootstrap.Clearfix, /* istanbul ignore next */{ visibleSmBlock: /* istanbul ignore next */true, __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }),
+            /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactBootstrap.Col, /* istanbul ignore next */{ sm: 12, md: 9, __source: { fileName: _jsxFileName, lineNumber: 50 }, __self: this },
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{ id: 'geo_map_contaner', __source: { fileName: _jsxFileName, lineNumber: 51 }, __self: this },
+                /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_GeoMap2.default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 52 }, __self: this })))))));
+
+
+
+
+
+
+  }} /* istanbul ignore next */exports.default =
+
+
+/* istanbul ignore next */(0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(GeoAppContaner);

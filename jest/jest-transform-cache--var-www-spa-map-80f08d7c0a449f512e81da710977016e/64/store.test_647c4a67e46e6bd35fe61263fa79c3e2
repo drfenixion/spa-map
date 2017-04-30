@@ -1,0 +1,18 @@
+/* istanbul ignore next */'use strict';
+
+
+
+
+var /* istanbul ignore next */_store = require('./src/store');
+var /* istanbul ignore next */_expect = require('expect'); /* istanbul ignore next */var _expect2 = _interopRequireDefault(_expect);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //import expect from 'expect';
+//import TestUtils from 'react-dom/test-utils';
+//import Shallow from 'react-test-renderer/shallow';
+//import React from 'react';
+describe('store', function () {it('should initialize', function () {var actual = /* istanbul ignore next */_store.store.getState();
+    var expected = {
+      quotes: [],
+      theme: { color: '#ffffff' } };
+
+    /* istanbul ignore next */(0, _expect2.default)(actual).toEqual(expected);
+  });
+});

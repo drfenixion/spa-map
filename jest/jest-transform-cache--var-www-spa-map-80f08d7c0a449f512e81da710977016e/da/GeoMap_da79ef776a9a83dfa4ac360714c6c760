@@ -1,0 +1,49 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/spa-map/src/components/GeoMap.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+var /* istanbul ignore next */_googleMapReact = require('google-map-react'); /* istanbul ignore next */var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
+
+var /* istanbul ignore next */_Point = require('./Point'); /* istanbul ignore next */var _Point2 = _interopRequireDefault(_Point);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    pointsFiltered: state.points.filtered };
+
+};
+
+class GeoMap extends /* istanbul ignore next */_react.Component {
+
+
+
+
+
+
+
+  render() {/* istanbul ignore next */var _this = this;
+    return (
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_googleMapReact2.default, /* istanbul ignore next */{
+          defaultCenter: this.props.center,
+          defaultZoom: this.props.zoom,
+          bootstrapURLKeys: {
+            key: this.props.API_KEY,
+            language: 'ru' }, __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this },
+
+
+
+        this.props.pointsFiltered.map(function (point) /* istanbul ignore next */{return (
+
+            /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_Point2.default, /* istanbul ignore next */{
+              key: point.id,
+              lat: point.lat,
+              lng: point.lng,
+              typeId: point.typeId,
+              rating: point.rating, __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: _this }));})));
+
+
+
+
+
+
+  }} /* istanbul ignore next */GeoMap.defaultProps = { center: { lat: 56.2903745, lng: 43.9068256 }, zoom: 11, API_KEY: 'AIzaSyDh_8BhNU8Zbc-mcRmhN-pddWm8_GCFm1c' }; /* istanbul ignore next */exports.default =
+
+
+/* istanbul ignore next */(0, _reactRedux.connect)(mapStateToProps, {})(GeoMap);

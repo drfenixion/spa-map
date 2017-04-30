@@ -1,0 +1,34 @@
+/* istanbul ignore next */'use strict';var _jsxFileName = '/var/www/spa-map/test/components/GeoAppContaner.test.js';
+
+//import TestUtils from 'react-dom/test-utils';
+var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);var /* istanbul ignore next */_expect = require('expect'); /* istanbul ignore next */var _expect2 = _interopRequireDefault(_expect);var /* istanbul ignore next */_shallow = require('react-test-renderer/shallow'); /* istanbul ignore next */var _shallow2 = _interopRequireDefault(_shallow);
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+var /* istanbul ignore next */_store = require('./../../src/store'); /* istanbul ignore next */var _store2 = _interopRequireDefault(_store);
+
+var /* istanbul ignore next */_GeoAppContaner = require('./../../src/components/GeoAppContaner'); /* istanbul ignore next */var _GeoAppContaner2 = _interopRequireDefault(_GeoAppContaner);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+describe('CoolComponent', function () {
+  it('should render the greeting', function () {
+    var renderer = /* istanbul ignore next */_shallow2.default.createRenderer();
+    renderer.render(
+    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRedux.Provider, /* istanbul ignore next */{ store: /* istanbul ignore next */_store2.default, __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: undefined },
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_GeoAppContaner2.default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: undefined })));
+
+
+    //const actual = renderer.getRenderOutput();
+    var actual =
+    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRedux.Provider, /* istanbul ignore next */{ store: /* istanbul ignore next */_store2.default, __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: undefined },
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_GeoAppContaner2.default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 22 }, __self: undefined }));
+
+
+    //console.log('actual: ', actual);
+    var expected =
+    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRedux.Provider, /* istanbul ignore next */{ store: /* istanbul ignore next */_store2.default, __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: undefined },
+      /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_GeoAppContaner2.default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 28 }, __self: undefined }));
+
+
+
+    /* istanbul ignore next */(0, _expect2.default)(actual).toEqual(expected);
+  });
+});

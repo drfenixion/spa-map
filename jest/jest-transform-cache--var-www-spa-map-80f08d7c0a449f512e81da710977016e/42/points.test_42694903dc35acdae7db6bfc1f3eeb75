@@ -1,0 +1,68 @@
+/* istanbul ignore next */'use strict';var /* istanbul ignore next */_expect = require('expect'); /* istanbul ignore next */var _expect2 = _interopRequireDefault(_expect);
+var /* istanbul ignore next */_quoteReducer = require('./quoteReducer'); /* istanbul ignore next */var _quoteReducer2 = _interopRequireDefault(_quoteReducer);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('quoteReducer', function () {
+  function stateBefore() {
+    return [
+    {
+      text: 'Lorem ipsum',
+      author: 'Jane Doe',
+      id: 1,
+      likeCount: 7 },
+
+    {
+      text: 'Ullamco laboris nisi ut aliquip',
+      author: 'John Smith',
+      id: 2,
+      likeCount: 0 }];
+
+
+  };
+
+
+
+  it('should add quotes by id', function () {
+    var action = {
+      type: 'ADD_QUOTE_BY_ID',
+      payload: {
+        text: 'This is a new quote',
+        author: 'Someone awesome',
+        id: 3,
+        likeCount: 0 } };
+
+
+
+    var actual = /* istanbul ignore next */(0, _quoteReducer2.default)(stateBefore(), action);
+    var expected = [
+    {
+      text: 'Lorem ipsum',
+      author: 'Jane Doe',
+      id: 1,
+      likeCount: 7 },
+
+    {
+      text: 'Ullamco laboris nisi ut aliquip',
+      author: 'John Smith',
+      id: 2,
+      likeCount: 0 },
+
+    {
+      text: 'This is a new quote',
+      author: 'Someone awesome',
+      id: 3,
+      likeCount: 0 }];
+
+
+    /* istanbul ignore next */(0, _expect2.default)(actual).toEqual(expected);
+  });
+
+  it('should return prev state when trying to make likeCount negative', function () {
+    var action = {
+      type: 'UNLIKE_QUOTE_BY_ID',
+      payload: { id: 2 } };
+
+    var actual = /* istanbul ignore next */(0, _quoteReducer2.default)(stateBefore(), action);
+    var expected = stateBefore();
+    /* istanbul ignore next */(0, _expect2.default)(actual).toEqual(expected);
+  });
+});
